@@ -1,23 +1,15 @@
 // DESCRIPTION:
-// Rock Paper Scissors
-// Let's play! You have to return which player won! In case of a draw return Draw!.
+// Very simple, given an integer or a floating-point number, find its opposite.
 
-// Examples(Input1, Input2 --> Output):
+// Examples:
 
-// "scissors", "paper" --> "Player 1 won!"
-// "scissors", "rock" --> "Player 2 won!"
-// "paper", "paper" --> "Draw!"
-
-const rps = (p1, p2) => {
-    if (p1 == p2)
-      return 'Draw!';
-      
-     if (p1 == 'rock' && p2 == 'scissors') 
-       return 'Player 1 won!'
-     else if (p1 == 'scissors' && p2 == 'paper') 
-       return 'Player 1 won!'
-     else if (p1 == 'paper' && p2 == 'rock') 
-       return 'Player 1 won!'
-     else
-       return 'Player 2 won!';
-  };
+// 1: -1
+// 14: -14
+// -34: 34
+function opposite(number) {
+  if(number > 0){
+    return -Math.abs(number)
+  } else {
+    return Math.abs(number)
+   }
+}
