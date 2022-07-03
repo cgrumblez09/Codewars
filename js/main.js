@@ -1,15 +1,25 @@
-// DESCRIPTION:
-// Very simple, given an integer or a floating-point number, find its opposite.
+// Write a function named setAlarm which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
 
-// Examples:
+// The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
 
-// 1: -1
-// 14: -14
-// -34: 34
-function opposite(number) {
-  if(number > 0){
-    return -Math.abs(number)
-  } else {
-    return Math.abs(number)
-   }
+// setAlarm(true, true) -> false
+// setAlarm(false, true) -> false
+// setAlarm(false, false) -> false
+// setAlarm(true, false) -> true
+
+function setAlarm(employed, vacation){
+  if(employed == true && vacation == true){
+    return false
+  }
+  else if(employed == false && vacation == true){
+    return false
+  }
+  else if(employed == false && vacation == false){
+    return false
+  }
+  else{
+    return true
+  }
 }
+
+const setAlarm = (employed, vacation) => employed && !vacation;
