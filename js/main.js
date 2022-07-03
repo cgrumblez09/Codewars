@@ -1,25 +1,50 @@
-// Write a function named setAlarm which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+// DESCRIPTION:
+// Create a function close_compare that accepts 3 parameters: a, b, and an optional margin. The function should return whether a is lower than, close to, or higher than b.
 
-// The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
+// a is considered "close to" b if margin is greater than or equal to the distance between a and b.
 
-// setAlarm(true, true) -> false
-// setAlarm(false, true) -> false
-// setAlarm(false, false) -> false
-// setAlarm(true, false) -> true
+// Please note the following:
 
-function setAlarm(employed, vacation){
-  if(employed == true && vacation == true){
-    return false
+// When a is close to b, return 0.
+// Otherwise...
+
+// When a is less than b, return -1.
+
+// When a is greater than b, return 1.
+
+// If margin is not given, treat it as zero.
+
+// Assume: margin >= 0
+
+// Tip: Some languages have a way to make parameters optional.
+
+// Example 1
+// If a = 3, b = 5, and margin = 3, then close_compare(a, b, margin) should return 0.
+
+// This is because a and b are no more than 3 numbers apart.
+
+// Example 2
+// If a = 3, b = 5, and margin = 0, then close_compare(a, b, margin) should return -1.
+
+// This is because the distance between a and b is greater than 0, and a is less than b.
+
+function closeCompare(a, b, margin){
+  if(margin >= Math.abs(a - b) || a == b){
+    return 0
+  }  
+  else if( a < b){
+    return -1
   }
-  else if(employed == false && vacation == true){
-    return false
+  
+  else if(a > b){
+    return 1
   }
-  else if(employed == false && vacation == false){
-    return false
-  }
-  else{
-    return true
-  }
+
 }
 
-const setAlarm = (employed, vacation) => employed && !vacation;
+// function closeCompare(a, b, m = 0){
+//   return Math.abs(a - b) <= m? 0: Math.sign(a - b);
+// }
+// function closeCompare(a, b, margin = 0) {
+//   return Math.abs(a - b) <= margin ? 0 : a < b ? -1 : 1;
+// }
