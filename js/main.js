@@ -1,14 +1,28 @@
-// DESCRIPTION
-// You're on your way to the market when you hear beautiful music coming from a nearby street performer. The notes come together like you wouln't believe as the musician puts together patterns of tunes. As you wonder what kind of algorithm you could use to shift octaves by 8 pitches or something silly like that, it dawns on you that you have been watching the musician for some 10 odd minutes. You ask, "how much do people normally tip for something like this?" The artist looks up. "It's always gonna be about tree fiddy."
+// DESCRIPTION:
+// Some new animals have arrived at the zoo. The zoo keeper is concerned that perhaps the animals do not have the right tails. To help her, you must correct the broken function to make sure that the second argument (tail), is the same as the last letter of the first argument (body) - otherwise the tail wouldn't fit!
 
-// It was then that you realize the musician was a 400 foot tall beast from the paleolithic era! The Loch Ness Monster almost tricked you!
+// If the tail is right return true, else return false.
 
-// There are only 2 guaranteed ways to tell if you are speaking to The Loch Ness Monster: A) it is a 400 foot tall beast from the paleolithic era; B) it will ask you for tree fiddy.
+// The arguments will always be strings, and normal letters.
 
-// Since Nessie is a master of disguise, the only way accurately tell is to look for the phrase "tree fiddy". Since you are tired of being grifted by this monster, the time has come to code a solution for finding The Loch Ness Monster. Note that the phrase can also be written as "3.50" or "three fifty".
+// For Haskell, body has the type of String and tail has the type of Char. For Go, body has type string and tail has type rune.
 
-function isLockNessMonster(s) {
-  if(s.includes('three fifty') || s.includes('tree fiddy') || s.includes('3.50'))
-    return true
-  //FIND THE LOCH NESS MONSTER. SAVE YOUR TREE FIDDY
+function correctTail(body, tail) {
+  
+  var sub = body.substr(body.length-(tail.length));
+  
+  if (sub === tail) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
+
+// function correctTail(bod, tail) {
+//   return bod[bod.length-1] === tail
+// }
+  
+// const correctTail = (x,y)=>x.endsWith(y)
+
+// const correctTail = (body, tail) => body.slice(-1) === tail[0]
