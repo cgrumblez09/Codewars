@@ -1,50 +1,14 @@
-// DESCRIPTION:
-// Create a function close_compare that accepts 3 parameters: a, b, and an optional margin. The function should return whether a is lower than, close to, or higher than b.
+// DESCRIPTION
+// You're on your way to the market when you hear beautiful music coming from a nearby street performer. The notes come together like you wouln't believe as the musician puts together patterns of tunes. As you wonder what kind of algorithm you could use to shift octaves by 8 pitches or something silly like that, it dawns on you that you have been watching the musician for some 10 odd minutes. You ask, "how much do people normally tip for something like this?" The artist looks up. "It's always gonna be about tree fiddy."
 
-// a is considered "close to" b if margin is greater than or equal to the distance between a and b.
+// It was then that you realize the musician was a 400 foot tall beast from the paleolithic era! The Loch Ness Monster almost tricked you!
 
-// Please note the following:
+// There are only 2 guaranteed ways to tell if you are speaking to The Loch Ness Monster: A) it is a 400 foot tall beast from the paleolithic era; B) it will ask you for tree fiddy.
 
-// When a is close to b, return 0.
-// Otherwise...
+// Since Nessie is a master of disguise, the only way accurately tell is to look for the phrase "tree fiddy". Since you are tired of being grifted by this monster, the time has come to code a solution for finding The Loch Ness Monster. Note that the phrase can also be written as "3.50" or "three fifty".
 
-// When a is less than b, return -1.
-
-// When a is greater than b, return 1.
-
-// If margin is not given, treat it as zero.
-
-// Assume: margin >= 0
-
-// Tip: Some languages have a way to make parameters optional.
-
-// Example 1
-// If a = 3, b = 5, and margin = 3, then close_compare(a, b, margin) should return 0.
-
-// This is because a and b are no more than 3 numbers apart.
-
-// Example 2
-// If a = 3, b = 5, and margin = 0, then close_compare(a, b, margin) should return -1.
-
-// This is because the distance between a and b is greater than 0, and a is less than b.
-
-function closeCompare(a, b, margin){
-  if(margin >= Math.abs(a - b) || a == b){
-    return 0
-  }  
-  else if( a < b){
-    return -1
-  }
-  
-  else if(a > b){
-    return 1
-  }
-
+function isLockNessMonster(s) {
+  if(s.includes('three fifty') || s.includes('tree fiddy') || s.includes('3.50'))
+    return true
+  //FIND THE LOCH NESS MONSTER. SAVE YOUR TREE FIDDY
 }
-
-// function closeCompare(a, b, m = 0){
-//   return Math.abs(a - b) <= m? 0: Math.sign(a - b);
-// }
-// function closeCompare(a, b, margin = 0) {
-//   return Math.abs(a - b) <= margin ? 0 : a < b ? -1 : 1;
-// }
