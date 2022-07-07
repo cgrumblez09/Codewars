@@ -1,28 +1,32 @@
-// DESCRIPTION:
-// Some new animals have arrived at the zoo. The zoo keeper is concerned that perhaps the animals do not have the right tails. To help her, you must correct the broken function to make sure that the second argument (tail), is the same as the last letter of the first argument (body) - otherwise the tail wouldn't fit!
+// Instructions
+// Output
+// Wolves have been reintroduced to Great Britain. You are a sheep farmer, and are now plagued by wolves which pretend to be sheep. Fortunately, you are good at spotting them.
+// Warn the sheep in front of the wolf that it is about to be eaten. Remember that you are standing at the front of the queue which is at the end of the array:
+// [sheep, sheep, sheep, sheep, sheep, wolf, sheep, sheep]      (YOU ARE HERE AT THE FRONT OF THE QUEUE)
+//    7      6      5      4      3            2      1
+// If the wolf is the closest animal to you, return "Pls go away and stop eating my sheep". Otherwise, return "Oi! Sheep number N! You are about to be eaten by a wolf!" where N is the sheep's position in the queue.
+// Note: there will always be exactly one wolf in the array.
+// Examples
+// Input: ["sheep", "sheep", "sheep", "wolf", "sheep"]
+// Output: "Oi! Sheep number 1! You are about to be eaten by a wolf!"
+// Input: ["sheep", "sheep", "wolf"]
+// Output: "Pls go away and stop eating my sheep"
 
-// If the tail is right return true, else return false.
 
-// The arguments will always be strings, and normal letters.
-
-// For Haskell, body has the type of String and tail has the type of Char. For Go, body has type string and tail has type rune.
-
-function correctTail(body, tail) {
-  
-  var sub = body.substr(body.length-(tail.length));
-  
-  if (sub === tail) {
-    return true;
-  }
-  else {
-    return false;
+function warnTheSheep(q) {
+  for(let i = q.length - 1; i >= 0; i--){
+    if(q[q.length - 1] == 'wolf'){
+      return `Pls go away and stop eating my sheep`
+    }
+    else if(q[i] == 'wolf'){
+      return `Oi! Sheep number ${(q.length - 1) - i}! You are about to be eaten by a wolf!`
+    }
   }
 }
+console.log(warnTheSheep(["wolf", "sheep", "sheep", "sheep", "sheep", "sheep", "sheep"]))
 
-// function correctTail(bod, tail) {
-//   return bod[bod.length-1] === tail
+// OTHER EXAMPLES
+// function warnTheSheep(queue) {
+//   const position = queue.reverse().indexOf('wolf');
+//   return position === 0 ? 'Pls go away and stop eating my sheep' : `Oi! Sheep number ${ position }! You are about to be eaten by a wolf!`;
 // }
-  
-// const correctTail = (x,y)=>x.endsWith(y)
-
-// const correctTail = (body, tail) => body.slice(-1) === tail[0]
