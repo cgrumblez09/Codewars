@@ -1,32 +1,30 @@
-// Instructions
-// Output
-// Wolves have been reintroduced to Great Britain. You are a sheep farmer, and are now plagued by wolves which pretend to be sheep. Fortunately, you are good at spotting them.
-// Warn the sheep in front of the wolf that it is about to be eaten. Remember that you are standing at the front of the queue which is at the end of the array:
-// [sheep, sheep, sheep, sheep, sheep, wolf, sheep, sheep]      (YOU ARE HERE AT THE FRONT OF THE QUEUE)
-//    7      6      5      4      3            2      1
-// If the wolf is the closest animal to you, return "Pls go away and stop eating my sheep". Otherwise, return "Oi! Sheep number N! You are about to be eaten by a wolf!" where N is the sheep's position in the queue.
-// Note: there will always be exactly one wolf in the array.
-// Examples
-// Input: ["sheep", "sheep", "sheep", "wolf", "sheep"]
-// Output: "Oi! Sheep number 1! You are about to be eaten by a wolf!"
-// Input: ["sheep", "sheep", "wolf"]
-// Output: "Pls go away and stop eating my sheep"
+// Your task is to find the nearest square number,
+//  nearest_sq(n), of a positive integer n.
 
+// Goodluck :)
 
-function warnTheSheep(q) {
-  for(let i = q.length - 1; i >= 0; i--){
-    if(q[q.length - 1] == 'wolf'){
-      return `Pls go away and stop eating my sheep`
-    }
-    else if(q[i] == 'wolf'){
-      return `Oi! Sheep number ${(q.length - 1) - i}! You are about to be eaten by a wolf!`
-    }
-  }
+function nearestSq(n){
+  return Math.pow(Math.round(Math.sqrt(n)), 2) // your code
 }
-console.log(warnTheSheep(["wolf", "sheep", "sheep", "sheep", "sheep", "sheep", "sheep"]))
 
-// OTHER EXAMPLES
-// function warnTheSheep(queue) {
-//   const position = queue.reverse().indexOf('wolf');
-//   return position === 0 ? 'Pls go away and stop eating my sheep' : `Oi! Sheep number ${ position }! You are about to be eaten by a wolf!`;
-// }
+
+
+// OTHER SOLUTIONS
+// const nearestSq = n => Math.pow(Math.round(Math.sqrt(n)), 2);
+
+// function nearestSq(n){
+//   let higherNum = n + 1
+//   while (Math.sqrt(higherNum) % 1 !== 0) {
+//     higherNum++
+//   }
+//   let lowerNum = n - 1
+//   while (Math.sqrt(lowerNum) % 1 !== 0) {
+//     lowerNum--
+//   }
+//   if (n === 1) {
+//   return n
+//   } else if (higherNum - n < n - lowerNum) {
+//     return higherNum
+//   } else { 
+//     return lowerNum 
+//   }}
