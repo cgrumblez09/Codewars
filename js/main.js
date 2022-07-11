@@ -1,30 +1,33 @@
-// Your task is to find the nearest square number,
-//  nearest_sq(n), of a positive integer n.
+// Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.
 
-// Goodluck :)
+// Examples
+// Input: [1, 5.2, 4, 0, -1]
+// Output: 9.2
 
-function nearestSq(n){
-  return Math.pow(Math.round(Math.sqrt(n)), 2) // your code
-}
+// Input: []
+// Output: 0
+
+// Input: [-2.398]
+// Output: -2.398
+
+// Assumptions
+// You can assume that you are only given numbers.
+// You cannot assume the size of the array.
+// You can assume that you do get an array and if the array is empty, return 0.
+// What We're Testing
+// We're testing basic loops and math operations. This is for beginners who are just learning loops and math operations.
+// Advanced users may find this extremely easy and can easily write this in one line.
+
+// Sum Numbers
+function sum (numbers) {
+  let result = 0
+  
+  for(let i = 0; i < numbers.length; i++){
+    result += numbers[i];
+  }    
+return result
+};
+console.log(sum([1, 5.2, 4, 0, -1]))
 
 
-
-// OTHER SOLUTIONS
-// const nearestSq = n => Math.pow(Math.round(Math.sqrt(n)), 2);
-
-// function nearestSq(n){
-//   let higherNum = n + 1
-//   while (Math.sqrt(higherNum) % 1 !== 0) {
-//     higherNum++
-//   }
-//   let lowerNum = n - 1
-//   while (Math.sqrt(lowerNum) % 1 !== 0) {
-//     lowerNum--
-//   }
-//   if (n === 1) {
-//   return n
-//   } else if (higherNum - n < n - lowerNum) {
-//     return higherNum
-//   } else { 
-//     return lowerNum 
-//   }}
+// const sum = n => n.reduce((a,b) => a+b, 0);
