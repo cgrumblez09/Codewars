@@ -1,19 +1,20 @@
-// We need a function that can transform a number into a string.
+// Let's imagine we have a popular online RPG. A player begins with a score of 0 in class E5. A1 is the highest level a player can achieve.
 
-// What ways of achieving this do you know?
+// Now let's say the players wants to rank up to class E4. To do so the player needs to achieve at least 100 points to enter the qualifying stage.
 
-// Examples (input --> output):
-// 123  --> "123"
-// 999  --> "999"
-// -100 --> "-100"
+// Write a script that will check to see if the player has achieved at least 100 points in his class. If so, he enters the qualifying stage.
 
-function numberToString(num) {
-    return num.toString();
-  }
+// In that case, we return, "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up.".
 
+// Otherwise return, False/false (according to the language in use).
 
-  //   function numberToString(num) {
-//     // Return a string of the number here!
-//     return String(num);
+// function playerRankUp (points) {
+//   if(points >= 100){
+//     return "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up."
 //   }
-//   const numberToString = num => `${num}`;
+//   else{
+//     return false
+//   }
+// }
+
+let playerRankUp = points => points >= 100 ? "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up." : false
