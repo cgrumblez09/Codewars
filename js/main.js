@@ -1,27 +1,15 @@
-// Create a function with two arguments that will return an array of the first (n) multiples of (x).
-// Assume both the given number and the number of times to count will be positive numbers greater than 0.
-// Return the results as an array (or list in Python, Haskell or Elixir).
-// Examples:
-// countBy(1,10) === [1,2,3,4,5,6,7,8,9,10]
-// countBy(2,5) === [2,4,6,8,10]
+// Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
 
-function countBy(x, n) {
-  var z = [];
-  for (let i = 1; i <= n; i++) {
-      z.push(x * i);
-  }
-  return z;
+// Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+
+// Example:
+// n= 5, m=5: 25
+// n=-5, m=5:  0
+// Waiting for translations and Feedback! Thanks!
+
+function paperwork(n, m) {
+  return n < 0 || m < 0 ? 0 : n * m
 }
 
-// const countBy = (x, n) => Array.from({length: n}, (v, k) => (k + 1) * x)
 
-// function countBy(x, n) {
-//   var z = [];
-//   for (var i=x; i<=(x*n); i+=x){
-//   z.push(i);
-//   }
-//   return z
-//   }
-
-// const countBy = (x, n) =>
-//   [...Array(n)].map((_, idx) => ++idx * x);
+// const paperwork = (n, m) => Math.max(0, n) * Math.max(0, m);
