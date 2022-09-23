@@ -1,28 +1,86 @@
-// Instructions
+// In JavaScript, switch can replace multiple if statements.
 
-// What if we need the length of the words separated by a space to be added at the end of that same word and have it returned as an array?
+// switch(n){
+//   case 1:  
+//     //code block
+//     break;
+//   case 2:
+//     //code block
+//     break;
+//   case ...:
+//     //code block
+//     break;
 
-// addLength('apple ban') => ["apple 5", "ban 3"]
-// addLength('you will win') => ["you 3", "will 4", "win 3"]
+//   default:       //default is optional, sometimes it can be omitted
+//     //code block
+//                  //The last one does not need break
+// }
+// switch is the keyword and n is the variable to switch. case 1 means when n===1. Following the ":" you can add your code for what to do in that case. The keyword break is used as termination - if you forget break, the code will continue running through the other case statements and default until a break appears. default is always entered if you've reached it.
 
-// Your task is to write a function that takes a String and returns an Array/list with the length of each word added to each element .
+// In some instances, the switch statement is clearer than the if..else statement.
 
-// Note: String will have at least one element; words will always be separated by a space.
+// For example, we can write a function to calculate what day today is, like this:
 
-// function addLength(str) {
-//     var split = str.split(" ");
-//     var result = [];
-     
-//     for (i = 0; i < split.length; ++i) {
-//       result.push(split[i] + " " + split[i].length);
-//     } 
-//     return result;  
+// function whatDayIsToday(n){
+//   // getDay() is a method of Date() - we will learn this later
+//   var day=new Date().getDay(),x; 
+//   switch (day){
+//     case 0:
+//       x="Today it's Sunday";
+//       break;
+//     case 1:
+//       x="Today it's Monday";
+//       break;
+//     case 2:
+//       x="Today it's Tuesday";
+//       break;
+//     case 3:
+//       x="Today it's Wednesday";
+//       break;
+//     case 4:
+//       x="Today it's Thursday";
+//       break;
+//     case 5:
+//       x="Today it's Friday";
+//       break;
+//     case 6:
+//       x="Today it's Saturday";
+//       break;
 //   }
+//   return x;
+// }
+// Task
+// Complete the function howManydays. It accepts 1 parameter month, which means the month of the year. Different months have a different number of days as shown in the table below. Return the number of days that are in month. There is no need for input validation: month will always be greater than 0 and less than or equal to 12.
 
-function addLength(str) {
-    let words = str.split(" ")
-  for(i=0; i<words.length; i++){
-   words[i] = words[i] + " " + words[i].length
+// +---------------+-------------+
+// |    month      |    days     |
+// +---------------+-------------+
+// |1,3,5,7,8,10,12|     31      |
+// +---------------+-------------+
+// |4,6,9,11       |     30      |
+// +---------------+-------------+
+// |2              |     28      |  (Do not consider the leap year)
+// +---------------+-------------+
+// Tip: Using default for most of the cases can reduce your work.
+
+// PREP
+// Need to take the month in number form and return the amount of days that are in that month.
+// Some cases have multiple OR conditions
+function howManydays(month){
+  switch (month){
+     case 2: return 28
+     case 4:
+     case 6:
+     case 9:
+     case 11: return 30
   }
-  return words
+  return 31
 }
+
+// function howManydays(month){
+//   switch ( month ){
+//     case 2 : return 28
+//     case 4: case 6: case 9: case 11: return 30
+//     default: return 31
+//   }
+// }
