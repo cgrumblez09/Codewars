@@ -4,7 +4,17 @@
 // treated as if they are a part of the word in this kata.
 
 // PREP
-// 
+// Sounds straight forward according to the task
+// Take every other string and reverse it
+// This means I need to isolate the strings first and then target every other
+// We need to reverse the string and insert it back into the original string
+// We then return the string with the reversed strings
+
+// First we need to split the string into an array
+// We then loop through the array and target odd number indexes
+// We can do that by finding the modulous of the index that is not 0 (i % 2!= 0)
+// We then target the index with newStr[i] and make it the reversed value
+// We then exit the loop and join/trim the string and return its value
 
 function reverse(str){
     //   console.log(str.split(' '))
