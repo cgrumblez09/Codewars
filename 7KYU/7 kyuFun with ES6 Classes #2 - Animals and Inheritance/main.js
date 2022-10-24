@@ -38,7 +38,16 @@
 // Dogs have an identical introduce/Introduce method as any other animal, but they have their own method called greetMaster/GreetMaster which accepts no arguments and returns "Hello (insert_master_name_here)" (of course not the literal string but replace the (insert_master_name_here) with the name of the dog's master).
 
 // PREP
-// 
+// We need to build out the constructor first
+// The name, age and status of each class can be inherited
+// What makes each different is the amount of legs and species of each new class (dog/car/shark)
+// super can only be used once in each constructor and we can add the arguments for legs and species in each class
+// the introduce method/function are inherited and only need to be modified in the Cat class
+// we can reuse the 'introduce()' function/method and build it out with super.introduce()
+// Remember we need to use introduce() not just introduce. the () calls the method/function
+// For the dog class we need to add a master parameter to the constructor since it is unique to the dog class
+// Remeber to add this.master to the dog class so it can be accessed
+// the greetMaster method/function needs to return the this.master in it
 
 class Shark extends Animal {
     constructor(name, age, status) {
